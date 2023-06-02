@@ -1,0 +1,132 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root{
+    --cor-primaria:#884A39;
+    --cor-secundaria:#C38154;
+    --cor-terciaria: #FFC26F;
+}
+* {
+    margin: 0;
+    padding: 0;
+}  /*serve para resetar o padrao de borda do navegador, modelo de caixa css box model o * aplica na pagina toda*/
+
+
+body {
+    color:var(--cor-terciaria);/* cor da fonte, da pra colar a cor depois de inspecionar no site. sempre vai aparecer com esse código. tem que colocar o # antes*/  
+    background-color: var(--cor-primaria);/* cor do fundo da pagina*/
+    /*height: 100vh; 100% do viewport nossa altura vai ser o maximo que o dispositivo vai*/
+    box-sizing: border-box /* para garantir que nada vai sair do body*/
+}
+
+.cabecalho{
+    padding: 2% 0% 0% 15%;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1,5rem;
+    font-weight: 600;
+    color: var(--cor-secundaria);
+    padding: 2% 0% 0% 15%;
+    text-decoration: none;
+}
+  
+
+.apresentacao {
+    padding: 5% 15%; /*espaco da margem do conteudo*/
+    display: flex; /*tipo de organizacao, ver no flexbox */
+    align-items:center; /*alinha os itens de acordo com a direcao do flex*/
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.apresentacao__conteudo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* espaco entre os itens do conteudo*/
+}
+.apresentacao__conteudo__titulo {
+    font-size: 2,25rem; /*divide o valor em pixel por 16 pra chegar no valor em rem*/
+    font-family: 'Krona One', sans-serif;
+}
+
+.titulo-destaque {
+    color: var(--cor-secundaria);
+} /* colocar ponto para criar uma classe e poder modificar so aquela parte*/
+
+.apresentacao__conteudo__texto {
+    font-size: 1,5rem;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.apresentacao__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.apresentacao__links__subtitulo {
+    font-family: 'Krona One', sans-serif;
+    font-weight: 400;
+    font-size: 1,5rem;
+}
+
+.apresentacao__links__link {
+    /*background-color: #22D4FD; define o fundo */
+    display:flex;
+    justify-content: center;
+    gap: 16px;
+    width: 50%; /* define o tamanho, quando esta em px fica fixo independente da config do navegador, em % muda em proporcao*/
+    text-align: center; /*define o alinhamento*/
+    border-radius: 8px; /* define o tamanho da borda*/
+    font-size: 1,5rem; /*tamanho da fonte*/
+    padding: 21.5px 0; /*distancia do texto para a borda, primeiro numero em cima e emabaixo, segundo os lados*/
+    text-decoration: none; /*tira o sublinhado do link*/
+    color: var(--cor-terciaria); /*cor da fonte*/
+    font-family: 'Montserrat', sans-serif; /*tipo da fonte*/
+    font-weight: 600; /*peso da fonte*//*todos esses parametros podem ser verificados no figma do projeto*/
+    border: 2px solid var(--cor-secundaria) /* primeiro mostra a expessura, o segundo como a linha vai ser e o ultimo a cor*/
+}
+
+.apresentacao__links__link:hover {
+    background-color: var(--cor-primaria);
+    /*faz a animacao de alterar quando o mouse passa em cima deste item*/
+}
+
+.apresentacao_imagem{
+    width: 50%;
+}
+.rodape {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    padding: 23.64px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1,5rem;
+    font-weight: 400;
+}
+
+@media (max-width: 1200px) {/*condicao para aplicar essas configuracoes no caso se chegar no maximo a 1200px a tela*/
+    .apresentacao {
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+    .apresentacao__conteudo{
+    width: auto;/* adapta a largura do conteudo, automaticamente de acordo com o padding utilizado para essa tela */
+    }
+    .cabecalho{
+        padding: 10%;
+    }
+    .cabecalho__menu{   
+        justify-content: center;
+    }
+}
