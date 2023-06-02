@@ -1,1 +1,1 @@
-Olá esse projeto ensina voce a usar o git
+Esse projeto foi feito junto com a aula de html do curso da Alura
